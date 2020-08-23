@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>H2 Computing Sign up Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <form action="exercise_02_response.html">
+    <h1>H2 Computing Sign up Form</h1>
+
+    <p>Please enter your particulars below.</p>
+
+    <table class="particulars">
+      <tr>
+        <td>
+          First Name:
+        </td>
+        <td>
+          <input name="first name" type="text" placeholder="First Name" class="option"/>
+        </td>
+        <td>
+          Last Name: 
+        </td>
+        <td>
+            <input name="last name" type="text" placeholder="Last Name" class="option"/>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Email: 
+        </td>
+        <td>
+            <input name="email" type="text" placeholder="name@email.com" class="option"/>
+        </td>
+        <td>
+            Contact: 
+        </td>
+        <td>
+            <input name="contact" type="text" value="" class="option"/>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+            Class: 
+        </td>
+        <td>
+            <input name="class" type="text" value="" class="option"/>
+        </td>
+        <td>
+          Gender:
+        </td>
+        <td>
+          <select class="option">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Date of Birth:
+        </td>
+        <td>
+            <input name="DoB" type="text" placeholder="01/01/2000" class="option"/>
+        </td>
+      </tr>
+    </table>
+
+    <p>Subject Combination</p>
+
+    <table>
+      <tr>
+        <td>
+          <input type="radio" id="first subj combi" name="subj combi" /> P CP M
+          E
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <input type="radio" id="second subj combi" name="subj combi" /> C CP M
+          E
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <input type="radio" id="other subj combi" name="subj combi" /> Other:
+          <input name="other subj combi" type="text" />
+        </td>
+      </tr>
+    </table>
+
+    <input type="submit"/>
+  </form>
+</html>

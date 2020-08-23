@@ -1,0 +1,31 @@
+* {
+    font-family: sans-serif;
+}
+
+h1 {
+    border: 5px solid #00008b;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.particulars td {
+    border: 2px solid #00008b;
+    width: 400px;
+}
+
+input[type=submit] {
+    background: #00008b;
+    color: white;
+    margin-top: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.option {
+    width: 400px;
+}
