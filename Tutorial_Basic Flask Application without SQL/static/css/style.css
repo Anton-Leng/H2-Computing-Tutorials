@@ -1,0 +1,57 @@
+h1 {
+  text-align: center;
+}
+
+.top_option {
+  text-align: center;
+  border: 1px solid black;
+  width: 500px;
+}
+
+a:hover {
+  color: red;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+#pw {
+  width: 1260px;
+}
+
+#mt {
+  width: 1260px;
+}
+
+.gradehead1 {
+  padding-left: 755px;
+}
+
+.grade {
+  width: 400px;
+  margin-left: 750px;
+}
+
+.displaySubjName {
+  align-content: right;
+}
+
+.displayGrade {
+  padding-left: 440px;
+}
+
+.displayRP {
+  align-content: right;
+  padding-left: 645px;
+}
+
+.graderesults {
+  padding-left: 440px;
+}
+
+.results {
+  padding-left: 565px;
+  text-align: right;
+}

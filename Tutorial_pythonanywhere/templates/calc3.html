@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>My Website</title>
+        <link rel="stylesheet" href="/static/css/style.css" />
+    </head>
+
+    <body>
+        <table>
+            <tr>
+              <td class="top_option"><a href="/">Home</a></td>
+              <td class="top_option"><a href="/about/">About</a></td>
+              <td class="top_option"><a href="/rp_calc/">RP Calculator</a></td>
+            </tr>
+        </table>
+        <h1>Here is your Rank Point!</h1>
+        <table>
+            <tr>
+                <td  class="displaySubjName"><b>Subject Name</b></td>
+                <td  class="displayGrade"><b>Grade</b></td>
+                <td  class="displayRP"><b>RP</b></td>
+            </tr>
+            <tr>
+                <td>H2 Subject 1</td>
+                <td class="graderesults">{{ h2s1g }}</td>
+                <td class="results">{{ "%.2f"|format(h2s1p) }}</td>
+            </tr>
+            <tr>
+                <td>H2 Subject 2</td>
+                <td class="graderesults">{{ h2s2g }}</td>
+                <td class="results">{{ "%.2f"|format(h2s2p) }}</td>
+            </tr>
+            <tr>
+                <td>H2 Subject 3</td>
+                <td class="graderesults">{{ h2s3g }}</td>
+                <td class="results">{{ "%.2f"|format(h2s3p) }}</td>
+            </tr>
+            <tr>
+                <td>H1 Subject</td>
+                <td class="graderesults">{{ h1g }}</td>
+                <td class="results">{{ "%.2f"|format(h1p) }}</td>
+            </tr>
+            <tr>
+                <td>General Paper</td>
+                <td class="graderesults">{{ GPg }}</td>
+                <td class="results">{{ "%.2f"|format(GPp) }}</td>
+            </tr>
+            {% if pw=='yes' %}
+            <tr>
+                <td>Project Work</td>
+                <td class="graderesults">{{ PWg }}</td>
+                <td class="results">{{ "%.2f"|format(PWp) }}</td>
+            </tr>
+            {% endif %}
+            {% if mt=='yes' %}
+            <tr>
+                <td>Mother Tongue</td>
+                <td class="graderesults">{{ MTg }}</td>
+                <td class="results">{{ "%.2f"|format(MTp) }}</td>
+            </tr>
+            {% endif %}
+            {% if pw=='yes' %}
+            <tr>
+                <td>Total</td>
+                <td class="graderesults"></td>
+                <td class="results">{{ total }} / 90.00</td>
+            </tr>
+            {% elif pw=='no' %}
+            <tr>
+                <td>Total</td>
+                <td class="graderesults"></td>
+                <td class="results">{{ total }} / 80.00</td>
+            </tr>
+            {% endif %}
+        </table>
+    </body>
+
+
+
+  </html>
