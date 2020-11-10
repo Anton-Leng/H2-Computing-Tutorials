@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Update Item Picture</title>
+        <link rel="stylesheet" href="static/css/style.css">
+    </head>
+    <body>
+        <table border="1px" width="1250px">
+            <tr>
+                <td><a href='/' style="text-decoration: none;">Home</a></td>
+                <td><a href='/addItem/' style="text-decoration: none;">Add Item</a></td>
+                <td><a href='/updateItem/' style="text-decoration: none;">Update Item</a></td>
+                <td><a href='/deleteItem/' style="text-decoration: none;">Delete Item</a></td>
+                <td><a href='/deleteCust/' style="text-decoration: none;">Delete Customer</a></td>
+                <td><a href='/deleteOrder/' style="text-decoration: none;">Delete Order</a></td>
+                <td><a href='/viewOrder/' style="text-decoration: none;">View Order</a></td>
+                <td><a href='/viewBill/' style="text-decoration: none;">View Bill</a></td>
+            </tr>
+          </table>
+        <h1>Update item picture</h1>
+        <form action="{{ url_for('updateItemPic') }}" method="POST" enctype="multipart/form-data">
+            <p>
+                ID of item to be updated:
+                <input type="text" name="itemID">
+            </p>
+            <p>
+                New item detail:
+                <input type="file" name="itemDetail">
+            </p>
+            <p><input type="submit" value="Update item!"></p>
+        </form>
+    </body>
+
+</html>

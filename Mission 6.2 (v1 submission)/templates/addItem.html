@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Add Item</title>
+        <link rel="stylesheet" href="static/css/style.css">
+    </head>
+    <body>
+        <table border="1px" width="1250px">
+            <tr>
+                <td><a href='/' style="text-decoration: none;">Home</a></td>
+                <td><a href='/addItem/' style="text-decoration: none;">Add Item</a></td>
+                <td><a href='/updateItem/' style="text-decoration: none;">Update Item</a></td>
+                <td><a href='/deleteItem/' style="text-decoration: none;">Delete Item</a></td>
+                <td><a href='/deleteCust/' style="text-decoration: none;">Delete Customer</a></td>
+                <td><a href='/deleteOrder/' style="text-decoration: none;">Delete Order</a></td>
+                <td><a href='/viewOrder/' style="text-decoration: none;">View Order</a></td>
+                <td><a href='/viewBill/' style="text-decoration: none;">View Bill</a></td>
+            </tr>
+          </table>
+        <h1>Add item to menu</h1>
+        <form action="{{ url_for('addItem') }}" method="POST" enctype="multipart/form-data">
+            <p>
+                Item ID:
+                <input type="text" name="itemID">
+            </p>
+            <p>
+                Item name:
+                <input type="text" name="itemName">
+            </p>
+            <p>
+                Item price:
+                <input type="text" name="itemPx">
+            </p>
+            <p>
+                Item picture:
+                <input type="file" name="itemPic">
+            </p>
+            <p><input type="submit" value="Add item!"></p>
+        </form>
+    </body>
+
+</html>

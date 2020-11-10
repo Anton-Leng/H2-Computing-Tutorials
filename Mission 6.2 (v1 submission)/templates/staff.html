@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Staff Page</title>
+        <link rel="stylesheet" href="static/css/style.css">
+    </head>
+    <body>
+        <table border="1px" width="1250px">
+            <tr>
+              <td><a href='/' style="text-decoration: none;">Home</a></td>
+              <td><a href='/register/' style="text-decoration: none;">Register</a></td>
+              <td><a href='/order/' style="text-decoration: none;">Order</a></td>
+              <td><a href='/viewBillcust/' style="text-decoration: none;">Bill</a></td>
+              <td><a href='/staff/' style="text-decoration: none;">Staff</a></td>
+            </tr>
+        </table>
+        <h1>Staff Page (only authorised users allowed)</h1>
+        <form action="{{ url_for('staff') }}" method="POST">
+            <p>
+                Input staff password:
+                <input type="text" name="pwd">
+            </p>
+            <p><input type="submit" value="Enter!"></p>
+
+
+        </form>
+    </body>
+
+</html>

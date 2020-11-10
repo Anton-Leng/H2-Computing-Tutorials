@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Register</title>
+        <link rel="stylesheet" href="static/css/style.css">
+    </head>
+    <body>
+        <table border="1px" width="1250px">
+            <tr>
+              <td><a href='/' style="text-decoration: none;">Home</a></td>
+              <td><a href='/register/' style="text-decoration: none;">Register</a></td>
+              <td><a href='/order/' style="text-decoration: none;">Order</a></td>
+              <td><a href='/viewBillcust/' style="text-decoration: none;">Bill</a></td>
+              <td><a href='/staff/' style="text-decoration: none;">Staff</a></td>
+            </tr>
+        </table>
+        <h1>Register here for customer ID</h1>
+        <form action="{{ url_for('register') }}" method="POST">
+            <p>
+                Table number:
+                <input type="text" name="TableNo" placeholder="T01">
+            </p>
+            <p><input type="submit" value="Submit!"></p>
+        </form>
+
+    </body>
+
+</html>

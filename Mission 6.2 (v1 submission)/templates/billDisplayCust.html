@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Bill</title>
+        <link rel="stylesheet" href="static/css/style.css">
+    </head>
+    <body>
+        <table border="1px" width="1250px">
+            <tr>
+              <td><a href='/' style="text-decoration: none;">Home</a></td>
+              <td><a href='/register/' style="text-decoration: none;">Register</a></td>
+              <td><a href='/order/' style="text-decoration: none;">Order</a></td>
+              <td><a href='/viewBillcust/' style="text-decoration: none;">Bill</a></td>
+              <td><a href='/staff/' style="text-decoration: none;">Staff</a></td>
+            </tr>
+        </table>
+        <h1>Here is your bill!</h1>
+        <table border="1px" width="90%">
+            <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+            {% for row in data %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{ "$%.2f" | format(row[2]) }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <p>Total: {{ "$%.2f" | format(total) }}</p>
+    </body>
+
+</html>

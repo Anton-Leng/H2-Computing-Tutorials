@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Order</title>
+        <link rel="stylesheet" href="static/css/style.css">
+    </head>
+    <body>
+        <table border="1px" width="1250px">
+            <tr>
+              <td><a href='/' style="text-decoration: none;">Home</a></td>
+              <td><a href='/register/' style="text-decoration: none;">Register</a></td>
+              <td><a href='/order/' style="text-decoration: none;">Order</a></td>
+              <td><a href='/viewBillcust/' style="text-decoration: none;">Bill</a></td>
+              <td><a href='/staff/' style="text-decoration: none;">Staff</a></td>
+            </tr>
+        </table>
+        <h1>Order here!</h1>
+        <form action="{{ url_for('order') }}" method="POST">
+            <table border="1px" width="90%">   
+                <tr>
+                    <th>Choose your item:</th>
+                    <th>Item ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Picture</th>
+                </tr>
+                
+                {% for row in rice %}
+                <tr>     
+                    <td style="background-color: #e7bd4a;">
+                        <input type="radio" name="OrderChoice" value="{{row[0]}}" id="{{row[0]}}">
+                    </td>
+                    <td style="background-color: #e7bd4a;">{{row[0]}}</td>
+                    <td style="background-color: #e7bd4a;">{{row[1]}}</td>
+                    <td style="background-color: #e7bd4a;">{{"$%.2f"|format(row[2])}}</td>
+                    <td style="background-color: #e7bd4a;"><img src="{{row[3]}}" alt="{{row[1]}}"></td> 
+                </tr>
+                {% endfor %}
+
+                {% for row in noodles %}
+                <tr>
+                    <td style="background-color:#d46767;">
+                        <input type="radio" name="OrderChoice" value="{{row[0]}}" id="{{row[0]}}">
+                    </td>
+                    <td style="background-color:#d46767;">{{row[0]}}</td>
+                    <td style="background-color:#d46767;">{{row[1]}}</td>
+                    <td style="background-color: #d46767;">{{"$%.2f"|format(row[2])}}</td>
+                    <td style="background-color:#d46767;"><img src="{{row[3]}}" alt="{{row[1]}}"></td>  
+                </tr>
+                {% endfor %}
+                
+               {% for row in sides %} 
+               <tr>                   
+                    <td style="background-color: #73C20C;">
+                        <input type="radio" name="OrderChoice" value="{{row[0]}}" id="{{row[0]}}">
+                    </td>
+                    <td style="background-color: #73C20C;">{{row[0]}}</td>
+                    <td style="background-color: #73C20C;">{{row[1]}}</td>
+                    <td style="background-color: #73C20C;">{{"$%.2f"|format(row[2])}}</td>
+                    <td style="background-color: #73C20C;"><img src="{{row[3]}}" alt="{{row[1]}}"></td>      
+                </tr>
+                {% endfor %}
+
+                {% for row in bev %}
+                <tr>
+                    
+                    <td style="background-color:powderblue;">
+                        <input type="radio" name="OrderChoice" value="{{row[0]}}" id="{{row[0]}}">
+                    </td>
+                    <td style="background-color:powderblue;">{{row[0]}}</td>
+                    <td style="background-color:powderblue;">{{row[1]}}</td>
+                    <td style="background-color:powderblue;">{{"$%.2f"|format(row[2])}}</td>
+                    <td style="background-color:powderblue;"><img src="{{row[3]}}" alt="{{row[1]}}"></td> 
+                </tr>
+                {% endfor %}
+
+                {% for row in dessert %}
+                <tr>
+                    <td style="background-color: #7e82e6;">
+                        <input type="radio" name="OrderChoice" value="{{row[0]}}" id="{{row[0]}}">
+                    </td>
+                    <td style="background-color: #7e82e6;">{{row[0]}}</td>
+                    <td style="background-color: #7e82e6;">{{row[1]}}</td>
+                    <td style="background-color: #7e82e6;">{{"$%.2f"|format(row[2])}}</td>
+                    <td style="background-color: #7e82e6;"><img src="{{row[3]}}" alt="{{row[1]}}"></td> 
+                </tr>
+                {% endfor %}
+                
+            </table>
+
+            <p>
+                Quantity:
+                <input type="number" name="qty" placeholder="1">
+            </p>
+
+            <p>
+                Remarks:
+                <textarea name="remarks"></textarea>
+            </p>
+
+            <p>
+                Customer ID:
+                <input type="number" name="custID" placeholder="6">
+            </p>
+
+            <p><input type="submit" value="Order!"></p>
+        </form>
+    </body>
+
+</html>
