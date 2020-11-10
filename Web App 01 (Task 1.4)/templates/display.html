@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Display Page</title>
+    </head>
+
+    <body>
+        <h1>Policy display page</h1>
+        <table border="1px" width="100%">
+            <tr>
+                <th align="left">Policy Record No: </th>
+                <th align="left">Agent ID</th>
+                <th align="left">Policy ID</th>
+                <th align="left">Start Date</th>
+            </tr>
+            {% for row in data %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>
+                    <a href="{{url_for('policy_details', policy_id=row[3])}}">{{row[3]}}</a>
+                </td>
+                <td>{{row[4]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <p><i>* Click on the desired policy ID for more information!</i></p>
+    </body>
+
+
+</html>

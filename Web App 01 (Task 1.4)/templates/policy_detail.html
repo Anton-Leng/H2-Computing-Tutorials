@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Policy Detail Page</title>
+    </head>
+
+    <body>
+        <h1>Policy details</h1>
+        <table border="1px" width="100%">
+            <tr>
+                <th align="left">Policy ID</th>
+                <th align="left">Yearly Premium</th>
+                <th align="left">Total Years</th>
+                <th align="left">Protected Sum</th>
+            </tr>
+            {% for row in data%}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+
+</html>

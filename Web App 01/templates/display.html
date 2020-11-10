@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Policy Records</title>
+  </head>
+  <h1>Policies of Customer {{ customer_id }}</h1>
+  <table padding="10px" border="1px">
+    {% for row in data %}
+    <p>{{ row }}</p>
+    {% endfor %}
+  </table>
+</html>

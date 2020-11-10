@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Display Page</title>
+        <link rel="stylesheet" href="/static/css/style.css">
+    </head>
+
+    <body>
+        <table border="1px" width="100%">
+            <th class="header">Agent Name</th>
+            <th class="header">January</th>
+            <th class="header">February</th>
+            <th class="header">March</th>
+            
+
+           {% for ele in pay %}
+            <tr>
+                <td>{{ele[0]}}</td>
+                <td>{{ele[1]}}</td>
+                <td>{{ele[2]}}</td>
+                <td>{{ele[3]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+
+
+</html>
