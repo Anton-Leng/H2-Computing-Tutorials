@@ -19,6 +19,22 @@
             </tr>
           </table>
         <h1>Delete item from menu</h1>
+        <table border="1px" width="1250px">
+            <tr>
+                <th>Item ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Picture</th>
+            </tr>
+            {% for row in data %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{"$%.2f"|format(row[2])}}</td>
+                <td><img src="{{row[3]}}" alt="{{row[1]}}"></td>
+            </tr>
+            {% endfor %}
+        </table>
         <form action="{{ url_for('deleteItem') }}" method="POST">
             <p>
                 Item ID:

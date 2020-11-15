@@ -19,6 +19,18 @@
             </tr>
           </table>
         <h1>Delete customer record</h1>
+        <table border="1px" width="1250px">
+            <tr>
+                <th>Customer ID</th>
+                <th>Table Number</th>
+            </tr>
+            {% for row in data %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
         <form action="{{ url_for('deleteCust') }}" method="POST">
             <p>
                 Customer ID:

@@ -19,6 +19,24 @@
             </tr>
           </table>
         <h1>Delete order</h1>
+        <table border="1px" width="1250px">
+            <tr>
+                <th>Order Number</th>
+                <th>Item ID</th>
+                <th>Remarks</th>
+                <th>Customer ID</th>
+                <th>Quantity</th>
+            </tr>
+            {% for row in data %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+            </tr>
+            {% endfor %}
+        </table>        
         <form action="{{ url_for('deleteOrder') }}" method="POST">
             <p>
                 Order number:

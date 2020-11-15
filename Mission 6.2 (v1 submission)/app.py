@@ -265,7 +265,18 @@ def updateItemPic():
 @app.route('/deleteItem/', methods=["GET", "POST"])
 def deleteItem():
     if request.method == "GET":
-        return render_template("deleteItem.html")
+
+        query = """
+        SELECT * FROM Item
+        """
+
+        db = sqlite3.connect("stall.db")
+        cursor = db.execute(query)
+        data = cursor.fetchall()
+        cursor.close()
+        db.close()
+
+        return render_template("deleteItem.html", data=data)
     else:
         itemID = request.form['itemID']
 
@@ -284,7 +295,18 @@ def deleteItem():
 @app.route('/deleteCust/', methods=["GET", "POST"])
 def deleteCust():
     if request.method == "GET":
-        return render_template("deleteCust.html")
+
+        query = """
+        SELECT * FROM Customer
+        """
+
+        db = sqlite3.connect("stall.db")
+        cursor = db.execute(query)
+        data = cursor.fetchall()
+        cursor.close()
+        db.close()
+
+        return render_template("deleteCust.html", data=data)
     else:
         custID = request.form['custID']
 
@@ -303,7 +325,18 @@ def deleteCust():
 @app.route('/deleteOrder/', methods=["GET", "POST"])
 def deleteOrder():
     if request.method == "GET":
-        return render_template("deleteOrder.html")
+
+        query = """
+        SELECT * FROM Orders
+        """
+
+        db = sqlite3.connect("stall.db")
+        cursor = db.execute(query)
+        data = cursor.fetchall()
+        cursor.close()
+        db.close()
+
+        return render_template("deleteOrder.html", data=data)
     else:
         orderNo = request.form['orderNo']
 
